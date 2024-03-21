@@ -8,11 +8,13 @@ CREATE PROCEDURE UNBLOCK.ADD_GROUP(
 )
 BEGIN
     INSERT INTO UNBLOCK.GROUP (
+        ID,
         NAME,
         OWNER_EMAIL
     )
     VALUES
     (
+        CONCAT(IN_NAME,IN_OWNER_EMAIL),
         IN_NAME,
         IN_OWNER_EMAIL
     );
